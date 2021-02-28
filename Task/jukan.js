@@ -61,7 +61,7 @@ if (typeof $request !== 'undefined') {
     console.log($.name, '【提示】请把聚看点Cookie填入Github 的 Secrets 中，请以&或者换行隔开')
     return;
   }
-  console.log(`您共提供${BodyArr.length}个聚看点账号Cookie\n————————————————————————————————————\n`)
+  console.log(`您共提供${BodyArr}个聚看点账号Cookie\n————————————————————————————————————\n`)
   for (let i = 0; i < BodyArr.length; i++) {
     if (BodyArr[i]) {
       bodyval = BodyArr[i]
