@@ -65,6 +65,7 @@ if (typeof $request !== 'undefined') {
   for (let i = 0; i < BodyArr.length; i++) {
     if (BodyArr[i]) {
       bodyval = BodyArr[i]
+      console.log(`您共提供${bodyval}  Cookie\n————————————————————————————————————\n`)
       ID =  decodeURIComponent(bodyval).match(/"openid" : "(\w+)"/)[0]
       apptoken = decodeURIComponent(bodyval).match(/"apptoken" : "(\w+)"/)[0]
       appVersion = decodeURIComponent(bodyval).match(/"appversion" : "(.*)"/)[0]
