@@ -66,9 +66,9 @@ if (typeof $request !== 'undefined') {
     if (BodyArr[i]) {
       bodyval ="jsondata=%7B%22apphotfixversion%22%3A%22%22%2C%22appid%22%3A%22xzwl%22%2C%22apptoken%22%3A%22xzwltoken070704%22%2C%22appversion%22%3A%227.5.3%22%2C%22appversioncode%22%3A753%2C%22channel%22%3A%22XIAOMI01_CHANNEL%22%2C%22mobileinfo%22%3A%22Xiaomi%22%2C%22openid%22%3A%2213a36cff74604900a1af1612e335b023%22%2C%22os%22%3A%22android%22%2C%22sdktype%22%3A%22bd_jssdk%3Bbd_sdk%3Bgdt_sdk%3Btt_sdk%3Bsg_sdk%3Bgdt_api%3Btt_api%3Bzk_api%3Bdk_api%22%2C%22sm_id%22%3A%22-1%22%2C%22token%22%3A%22e5h%25252F%25252Bg%25252BtRGsfmPBxK4hnq62lAKU1SI%25252Fp%25252FzqXEpIV80Mc%25252BMjRNpr9W0MPTIPk7EY5%25250A%22%7D"
       console.log(bodyval)
-      ID =  decodeURIComponent(bodyval).match(/"openid" : "(\w+)"/)[0]
-      apptoken = decodeURIComponent(bodyval).match(/"apptoken" : "(\w+)"/)[0]
-      appVersion = decodeURIComponent(bodyval).match(/"appversion" : "(.*)"/)[0]
+      ID =  decodeURIComponent(bodyval).match(/"openid":"(\w+)"/)[0]
+      apptoken = decodeURIComponent(bodyval).match(/"apptoken":"(\w+)"/)[0]
+      appVersion = decodeURIComponent(bodyval).match(/"appversion":"(.*)"/)[0]
       cookieval = `xz_jkd_appkey=${ID}!iOS!${appVersion}`
       times = Date.parse(new Date())/1000
       $.index = i + 1;
