@@ -41,9 +41,7 @@ if ($.isNode()) {
 } else {
    BodyArr.push(bodys)
 }
-      console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
-
-      console.log(`============ 脚本执行-北京时间(UTC+8)：${JKbody}(`)
+      
 if ($.isNode()) {
       console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
       console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
@@ -63,10 +61,10 @@ if (typeof $request !== 'undefined') {
     console.log($.name, '【提示】请把聚看点Cookie填入Github 的 Secrets 中，请以&或者换行隔开')
     return;
   }
-  console.log(`您共提供${BodyArr}个聚看点账号Cookie\n————————————————————————————————————\n`)
+  console.log(`您共提供${BodyArr.length}个聚看点账号Cookie\n————————————————————————————————————\n`)
   for (let i = 0; i < BodyArr.length; i++) {
     if (BodyArr[i]) {
-      bodyval = 'jsondata=%7B%22apphotfixversion%22%3A%22%22%2C%22appid%22%3A%22xzwl%22%2C%22apptoken%22%3A%22xzwltoken070704%22%2C%22appversion%22%3A%227.5.3%22%2C%22appversioncode%22%3A753%2C%22channel%22%3A%22XIAOMI01_CHANNEL%22%2C%22mobileinfo%22%3A%22Xiaomi%22%2C%22openid%22%3A%2213a36cff74604900a1af1612e335b023%22%2C%22os%22%3A%22android%22%2C%22sdktype%22%3A%22bd_jssdk%3Bbd_sdk%3Bgdt_sdk%3Btt_sdk%3Bsg_sdk%3Bgdt_api%3Btt_api%3Bzk_api%3Bdk_api%22%2C%22sm_id%22%3A%22-1%22%2C%22token%22%3A%22e5h%25252F%25252Bg%25252BtRGsfmPBxK4hnq62lAKU1SI%25252Fp%25252FzqXEpIV80Mc%25252BMjRNpr9W0MPTIPk7EY5%25250A%22%7D'
+      bodyval ="jsondata=%7B%22apphotfixversion%22%3A%22%22%2C%22appid%22%3A%22xzwl%22%2C%22apptoken%22%3A%22xzwltoken070704%22%2C%22appversion%22%3A%227.5.3%22%2C%22appversioncode%22%3A753%2C%22channel%22%3A%22XIAOMI01_CHANNEL%22%2C%22mobileinfo%22%3A%22Xiaomi%22%2C%22openid%22%3A%2213a36cff74604900a1af1612e335b023%22%2C%22os%22%3A%22android%22%2C%22sdktype%22%3A%22bd_jssdk%3Bbd_sdk%3Bgdt_sdk%3Btt_sdk%3Bsg_sdk%3Bgdt_api%3Btt_api%3Bzk_api%3Bdk_api%22%2C%22sm_id%22%3A%22-1%22%2C%22token%22%3A%22e5h%25252F%25252Bg%25252BtRGsfmPBxK4hnq62lAKU1SI%25252Fp%25252FzqXEpIV80Mc%25252BMjRNpr9W0MPTIPk7EY5%25250A%22%7D"
       console.log(`您共提供${bodyval}  Cookie\n————————————————————————————————————\n`)
       ID =  decodeURIComponent(bodyval).match(/"openid" : "(\w+)"/)[0]
       apptoken = decodeURIComponent(bodyval).match(/"apptoken" : "(\w+)"/)[0]
